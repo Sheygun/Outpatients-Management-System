@@ -1,67 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sheygun CV:: Online curriculum vitea</title>
-  <link rel="stylesheet" href="./stylesheets/css/style.css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link href="stylesheets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="stylesheets/css/mdb.min.css" rel="stylesheet">
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
-        <link rel="stylesheet" href="stylesheets/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="stylesheets/css/animate.css">
-        <link rel="stylesheet" href="stylesheets/css/media-queries.css">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">      
-        <link rel="stylesheet" type="text/css" href="stylesheets/css/switcher.css" media="screen" />
-        <link rel="stylesheet" href="stylesheets/css/fractionslider.css"/>
-        <link rel="stylesheet" href="stylesheets/css/style-fraction.css"/>
+<html>
+
+  <% include partial/head %>
+
+  <style>
+      .hr-light {
+        border-top: 3px solid #fff;
+        width: 80px;
+      }
+
+      h1, h2, h3, h4, h5, h6{
+        font-family: Lato;
+      }
+
+      @media (max-width: 991px) {
+          .editted{
+              display: none
+          }
+      }
+
+      @media (max-width: 550px) {
+          .editted{
+              display: none
+          }
+
+      }
+    </style>
+
+
 </head>
+
 <body>
-  <div class="back-pics">
+    <% include partial/navbar %>
 
-  </div>  
-  <footer class="red" style="height: 50px;">
+  <section class="bg">
 
-  </footer>
+    <div class="view" style="background-image: url('/stylesheets/images/bg1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <div class="mask rgba-black-strong">
+        <div class="container">
+          <div class="row" style="margin-top:20%;">
+            <div class="col-md-12 mb-4 white-text text-center">
+              <h1 class="h1-responsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s"><strong>Outpatient Management System</strong></h1>
+              <hr class="hr-light my-3 wow fadeInDown" data-wow-delay="0.4s">
+              <div class="col-md-6 col-12 mx-auto wow fadeInDown" data-wow-delay="0.4s">
+                <p>Outpatient programs grant the freedom to continue providing for yourself and your family while getting the help you need to overcome a substance abuse disorder.</p>
+              </div>
+              <a href="#department" class="btn btn-outline-white scrolled wow fadeInDown px-3" data-wow-delay="0.4s">Departments</a>
+              <a href="#register" class="btn btn-outline-white scrolled wow fadeInDown px-3" data-wow-delay="0.4s">Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+   <section class="">
+    <div style="height:80px;"></div>
+        <div class="row mx-0 mb-5">
+
+          <div class="col-md-6">
+            <h1 class="h3-responsive text-center font-weight-bold">Outpatient MS</h1>
+            <hr class="hr w-25" style="border:3px solid;">
+            <p class="lead mx-2">The goal of outpatient management system is to develop and implement the system cost effectively; user-friendly and most suited to the user’s analysis is the heart of the process. Analysis is the study of the various operations performed by the system and their relationship within and outside of the system.</p>
+            <div class="lead">A day hospital is an outpatient hospital facility where patients attend for assessment, treatment or rehabilitation during the day and then return home or spend the night at a different facility.</div>
+          </div>
+
+          <div class="col-md-6 hideContent">
+              <div>
+                <img src="/stylesheets/images/bg2.jpg" alt="Outpatient" class="img-fluid">
+              </div>
+          </div>
+        </div>
+   </section>
+
+   <section style="background: rgb(82, 82, 82);"><i id="department"></i>
+    <div style="height:70px;"></div>
+     <div class="row mx-0">
+       <div class="col-md-12 mb-4">
+          <h1 class="titleHeader text-center font-weight-bold white-text">Departments</h1><hr class="hr-light">
+          <p class="text-center white-text lead">These are the departments in our hospital</p>
+       </div>
+       <div class="col-md-8 mx-auto">
+         <div class="row">
+           <div class="col-md-4 col-6 mb-3">
+             <center>
+                <i class="fa fa-stethoscope fa-3x white-text" aria-hidden="true"></i>
+                <h4 class="my-3 text-capitalize white-text" style="font-size:20px;">Neurology</h4>
+             </center>
+           </div>
+
+             <div class="col-md-4 col-6 mb-3">
+             <center>
+                <i class="fa fa-wheelchair fa-3x white-text" aria-hidden="true"></i>
+                <h4 class="my-3 text-capitalize white-text" style="font-size:20px;">Traumatology</h4>
+             </center>
+           </div>
+
+           <div class="col-md-4 col-6 mb-3">
+             <center>
+                <i class="fa fa-plus-square fa-3x white-text" aria-hidden="true"></i>
+                <h4 class="my-3 text-capitalize white-text" style="font-size:20px;">Dentistry</h4>
+             </center>
+           </div>
+
+           <div class="col-md-4 col-6 mb-3">
+             <center>
+                <i class="fa fa-heartbeat fa-3x white-text" aria-hidden="true"></i>
+                <h4 class="my-3 text-capitalize white-text" style="font-size:20px;">Cardiology</h4>
+             </center>
+           </div>
+
+           <div class="col-md-4 col-6 mb-3">
+             <center>
+                <i class="fa fa-medkit fa-3x white-text" aria-hidden="true"></i>
+                <h4 class="my-3 text-capitalize white-text" style="font-size:20px;">Pulmonary</h4>
+             </center>
+           </div>
+
+           <div class="col-md-4 col-6 mb-3">
+             <center>
+                <i class="fa fa-ambulance fa-3x white-text" aria-hidden="true"></i>
+                <h4 class="my-3 text-capitalize white-text" style="font-size:20px;">Pediatrics</h4>
+             </center>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div style="height:40px;"></div><i id="register"></i>
+   </section>
+
+   <section>
+    <div style="height:70px;"></div>
+      <div class="container">
+          <div class="row mx-0">
+              <div class="col-md-7">
+                <div>
+                  <h1 class="regHeader font-weight-bold">Feel Free to Register and Start Treatment</h1>
+                </div>
+                <p class="lead">The outpatient registration process is instrumental for giving a good first impression of a healthcare organization. A positive patient experience that starts at the check-in desk can set the tone for the entire care encounter.</p>
+                <a href="/register" class="btn btn-outline-black">
+                  <span class="h5 font-weight-bold text-capitalize">Register Now</span>
+                </a>
+              </div>
+
+              <div class="col-md-5 hideContent">
+                  <div>
+                    <img src="/stylesheets/images/st11.png" alt="Outpatient" class="img-fluid">
+                  </div>
+              </div>
+            </div>
+      </div>
+      <div style="height:70px;"></div>
+    </section>
+
+   <footer>
+     <section class="black" style="font-family: Lato;">
+      <div style="height:80px;"></div>
+          <div class="container">
+            <div class="row mx-0">
+                  <div class="col-md-4 mb-4">
+                      <div>
+                          <h1 class="h3 font-weight-bold mb-5 white-text">Opening Hours</h1>
+                          <p style="color:white;">Mon – Fri ------- 9:00am - 6:00pm</p>
+                          <p style="color:white;">Saturday -------  9:00am - 5:00pm</p>
+                          <p style="color:white;">Sunday -------  10:00am - 5:00pm</p>
+                        </div>
+                  </div>
+                    <div class="col-md-3 mb-4">
+                     <div>
+                       <h1 class="h3 font-weight-bold mb-5 white-text">Contact Us</h1>
+                       <p style="color:white;"><span class="fa fa-home mr-2"></span> Lasu Ojo, Lagos, Nigeria.</p>
+                       <p style="color:white;"><span class="fa fa-phone-square mr-2"></span> +234 123 342 7890</p>
+                       <a href="mailto:example@email.com"><p style="color:white;"><span class="fa fa-envelope-o mr-2"></span>Info@outpatient.com</p></a>
+                     </div>
+                    </div>
+
+                    <div class="col-md-2 mb-4">
+                     <div>
+                       <h1 class="h3 font-weight-bold mb-5 white-text">Legal</h1>
+                       <p style="color:white;">Terms and Conditions</p>
+                       <p style="color:white;">Privacy Policy</p>
+                       <p style="color:white;">About Us</p>
+                       <p style="color:white;">FAQ</p>
+                       <p style="color:white;">Contact Us</p>
+                     </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                      <div>
+                          <h1 class="h4-responsive font-weight-bold mb-5 white-text">Subscribe To Newsletter</h1>
+
+                          <form class="text-center p-2">
+                              <input type="email" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="E-mail">
+                              <button class="btn btn-outline-white btn-block p-2">
+                                  <span class="h5 font-weight-bold text-capitalize">Submit</span>
+                              </button>
+                          </form>
+                        </div>
+                  </div>
+            </div>
+        </div>
+       <div style="height:80px;"></div>
+     </section>
+
+   </footer>
+
+  <% include partial/footer %>
 </body>
-
-
-
-
-
-
-
-
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="stylesheets/js/javascript.js"></script>
-   <script type="text/javascript" src="stylesheets/js/jquery-3.3.1.min.js"></script>
-   <script type="text/javascript" src="stylesheets/js/popper.min.js"></script>
-   <script type="text/javascript" src="stylesheets/js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="stylesheets/js/mdb.min.js"></script>
-   <script src="stylesheets/js/jquery-1.11.1.min.js"></script>
-         <script src="stylesheets/bootstrap/js/bootstrap.min.js"></script>
-         <script src="stylesheets/js/jquery.backstretch.min.js"></script>
-         <script src="stylesheets/js/wow.min.js"></script>
-         <script src="stylesheets/js/retina-1.1.0.min.js"></script>
-         <script src="stylesheets/js/scripts.js"></script>
-         <script type="text/javascript" src="stylesheets/js/jquery.cookie.js"></script>
- <script type="text/javascript" src="stylesheets/js/styleswitch.js"></script> 
- <script src="stylesheets/js/jquery.fractionslider.js" type="text/javascript" charset="utf-8"></script>
- <script type="text/javascript" src="stylesheets/js/jquery.smartmenus.min.js"></script>
- <script type="text/javascript" src="stylesheets/js/jquery.smartmenus.bootstrap.min.js"></script>
- <script type="text/javascript" src="stylesheets/js/owl.carousel.min.js"></script>
- <script type="text/javascript" src="stylesheets/js/jflickrfeed.js"></script>
- <script type="text/javascript" src="stylesheets/js/jquery.magnific-popup.min.js"></script>
- <script type="text/javascript" src="stylesheets/js/jquery.isotope.min.js"></script>
- <script type="text/javascript" src="stylesheets/js/jquery.easypiechart.min.js"></script>
- <script type="text/javascript" src="stylesheets/js/swipe.js"></script>
- <script type="text/javascript" src="stylesheets/js/jquery-scrolltofixed-min.js"></script>
- <script type="text/javascript" src="stylesheets/js/jquery.matchHeight-min.js"></script>
- 
- <script src="stylesheets/js/main.js"></script>
+ <% include partial/scripts %>
 </html>

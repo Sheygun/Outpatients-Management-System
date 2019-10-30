@@ -1,0 +1,63 @@
+html,
+body,
+.bg,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+html,
+body,
+.bg,
+.view {
+  height: 70vh;
+}
+}
+
+.titleHeader{
+    font-size: 60px;
+}
+
+.regHeader{
+    font-size: 50px;
+}
+@media (max-width: 968px){
+    .hideContent{
+        display: none;
+    }
+    .titleHeader{
+        font-size: 30px;
+    }
+    .regHeader{
+        font-size: 30px;
+    }
+}
+
+/*-- bottom-to-top --*/
+#toTop {
+    display: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 26px;
+    right: 2%;
+    overflow: hidden;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border: none;
+    text-indent: 100%;
+    background: url("../images/move-top.png") no-repeat 0px 0px;
+    background-size: 40px;
+}
+
+#toTopHover {
+    width: 40px;
+    height: 40px;
+    display: block;
+    overflow: hidden;
+    float: right;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+}
+/*-- //bottom-to-top --*/

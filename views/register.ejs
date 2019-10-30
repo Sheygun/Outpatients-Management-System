@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+  <% include partial/head %>
+
+  <style>
+      .hr-light {
+        border-top: 3px solid #fff;
+        width: 80px;
+      }
+
+      h1, h2, h3, h4, h5, h6{
+        font-family: Lato;
+      }
+
+      @media (max-width: 991px) {
+          .editted{
+              display: none
+          }
+      }
+
+      @media (max-width: 550px) {
+          .editted{
+              display: none
+          }
+
+      }
+    </style>
+
+
+</head>
+
+<body>
+        <% include partial/navbar %>
+
+
+
+
+   <section class="">
+    <div style="height:120px;"></div>
+        <div class="row mx-0 mb-5">
+
+          <div class="col-md-6 mx-auto">
+            <h1 class="h3-responsive text-center font-weight-bold">Register Now</h1>
+            <hr class="hr w-25" style="border:3px solid;">
+
+            <div class="row">
+              <div class="col-md-8 mx-auto">
+                  <form class="text-center p-2">
+                      <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Full Name">
+                      <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Phone Number">
+                      <input type="email" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="E-mail">
+                      <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Password">
+                      <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Confirm Password">
+                      <p>Already have an account? <a href="/login">Login Now</a></p>
+
+                    <button class="btn btn-outline-black btn-block ">
+                      <span class="h5 font-weight-bold text-capitalize">Register Now</span>
+                    </button>
+                  </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+   </section>
+
+  <% include partial/footer %>
+</body>
+ <% include partial/scripts %>
+</html>
