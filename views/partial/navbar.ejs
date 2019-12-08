@@ -21,14 +21,30 @@
                     <a class="nav-link" href="#">Contact Us</a>
                 </li>
 
+
+
+                <%if(isLoggedIn) { %>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">Profile</a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                      <a class="dropdown-item" href="/dashboard">Account</a>
+                      <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                  </li>
+              <% } %>
+
+              <%if(!isLoggedIn) { %>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">Register</a>
-                  <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                    <a class="dropdown-item" href="/register">Register</a>
-                    <a class="dropdown-item" href="/login">Login</a>
-                  </div>
-                </li>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">Register</a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                      <a class="dropdown-item" href="/register">Register</a>
+                      <a class="dropdown-item" href="/login">Login</a>
+                    </div>
+                  </li>
+              <% } %>
+
               </ul>
             </div>
           </nav>

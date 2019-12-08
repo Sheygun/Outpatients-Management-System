@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  <% include ../partial/head %>
+
+  <style>
+      .hr-light {
+        border-top: 3px solid #fff;
+        width: 80px;
+      }
+
+      h1, h2, h3, h4, h5, h6{
+        font-family: Lato;
+      }
+
+      @media (max-width: 991px) {
+          .editted{
+              display: none
+          }
+      }
+
+      @media (max-width: 550px) {
+          .editted{
+              display: none
+          }
+
+      }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <!--Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top black">
+            <a class="navbar-brand font-weight-bold" href="/">Outpatient MS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+              aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/">Home</a>
+                    </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Our Work</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Profile</a>
+                  <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                    <a class="dropdown-item" href="/dashboard/profile">Profile</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!--/.Navbar -->
+    </header>
+
+   <section class="container">
+    <div style="height:110px;"></div>
+        <div class="row mx-0 mb-4">
+              <div class="mb-4">
+                    <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb indigo lighten-4">
+                                <li class="breadcrumb-item"><a class="black-text" href="/">Home</a><i class="fa fa-caret-right mx-2"
+                                    aria-hidden="true"></i></li>
+                                <li class="breadcrumb-item"><a class="black-text" href="/dashboard">Dashboard</a><i class="fa fa-caret-right mx-2"
+                                    aria-hidden="true"></i></li>
+                                <li class="breadcrumb-item active">Make-An-Appiontment</li>
+                            </ol>
+                        </nav>
+              </div>
+
+          <div class="col-md-12 mb-5">
+            <div>
+                <h1 class="h1-responsive font-weight-bold text-center">Make an Appointment</h1>
+                <hr class="hr w-50" style="border:3px solid;">
+            </div>
+          </div>
+
+          <% if (messages.updateProfile) { %>
+            <div class="col-md-6 mx-auto">
+                <div class="alert alert-success alert-dismissable p-2 mt-2" id="notify">
+                    <h6 id="status" class="h5 text-center font-weight-bold"><%= messages.updateProfile %></h6>
+                </div>
+            </div>
+        <% } %>
+        <div class="clearfix"></div>
+
+
+          <div class="col-md-12">
+                <div>
+
+                            <div class="col-md-6 mx-auto">
+                                    <form class="text-center p-3" action="/dashboard/make-an-appointment" method="POST">
+                                                <select class="browser-default custom-select mb-3" id="department" name="department" style="font-size:18px;">
+                                                    <option value="default" selected>Choose Department</option>
+                                                    <option value="Neurology">Neurology</option>
+                                                    <option value="Dentistry">Dentistry</option>
+                                                    <option value="Cardiology">Cardiology</option>
+                                                    <option value="Pediatrics">Pediatrics</option>
+                                                    <option value="Pulmonology">Pulmonology</option>
+                                                    <option value="Ophthalmology">Ophthalmology</option>
+                                                    <option value="Diagnostics">Diagnostics</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+
+                                            <select class="browser-default custom-select mb-3" id="doctor" name="doctor" style="font-size:18px;">
+                                                <option value="default" selected disabled>Choose Doctor</option>
+                                                <option value="Dr Akinwole Micheal">Dr Akinwole Micheal</option>
+                                                <option value="Dr Olubanji Timothy">Dr Olubanji Timothy</option>
+                                                <option value="Dr Sola Ninolowo">Dr Sola Ninolowo</option>
+                                                <option value="Dr Hamzat Kareem">Dr Hamzat Kareem</option>
+                                                <option value="Dr Abigeal Titi">Dr Abigeal Titi</option>
+                                                <option value="Dr Toyin Abraham">Dr Toyin Abraham</option>
+                                            </select>
+                                            <input type="text" id="health" name="health" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Health Symptoms">
+                                            <input type="text" id="regNum" name="regNum" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Registration Number">
+                                            <button class="btn btn-outline-black ">
+                                            <span class="h5 font-weight-bold text-capitalize">Submit Now</span>
+                                          </button>
+                                        </form>
+                            </div>
+                    </div>
+          </div>
+
+        </div>
+        <div style="height:50px;"></div>
+   </section>
+
+  <% include ../partial/footer %>
+</body>
+ <% include ../partial/scripts %>
+</html>

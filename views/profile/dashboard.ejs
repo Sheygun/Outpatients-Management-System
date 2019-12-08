@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  <% include partial/head %>
+  <% include ../partial/head %>
 
   <style>
       .hr-light {
@@ -31,10 +31,42 @@
 </head>
 
 <body>
-  <% include partial/navbar %>
+    <header>
+        <!--Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top black">
+            <a class="navbar-brand font-weight-bold" href="/">Outpatient MS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+              aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/">Home</a>
+                    </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Our Work</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
 
-
-
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Profile</a>
+                  <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                    <a class="dropdown-item" href="/dashboard/profile">Profile</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!--/.Navbar -->
+    </header>
 
    <section class="container">
     <div style="height:110px;"></div>
@@ -42,7 +74,7 @@
 
           <div class="col-md-12 mb-5">
             <div>
-                <h1 class="h1-responsive font-weight-bold text-center">Welcome John Doe Smith</h1>
+                <h1 class="h1-responsive font-weight-bold text-center">Welcome <%= user.firstName %> <%= user.lastName %></h1>
                 <hr class="hr w-50" style="border:3px solid;">
             </div>
           </div>
@@ -55,8 +87,7 @@
                                     aria-controls="pills-Profile" aria-selected="false">Profile</a>
                                 </li>
                                 <li class="nav-item list-group-item">
-                                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                                    aria-controls="pills-home" aria-selected="true">Make An Appointment</a>
+                                <a class="nav-link" href="/dashboard/make-an-appointment" target="_blank">Make An Appointment</a>
                                 </li>
                                 <li class="nav-item list-group-item">
                                 <a class="nav-link" id="pills-history-tab" data-toggle="pill" href="#pills-history" role="tab"
@@ -76,43 +107,7 @@
           </div>
           <div class="col-md-9">
                 <div class="tab-content pt-2 pl-1" id="pills-tabContent">
-                        <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                            <div>
-                                <div>
-                                    <h1 class="h3-responsive font-weight-bold ml-5">Make An Appointment</h1>
-                                </div>
-                                    <div class="col-md-8">
-                                            <form class="text-center p-3">
-                                                        <select class="browser-default custom-select mb-3" style="font-size:18px;">
-                                                                <option value="default" selected>Choose Department</option>
-                                                                <option value="2">Neurology</option>
-                                                                <option value="3">Dentistry</option>
-                                                                <option value="4">Cardiology</option>
-                                                                <option value="5">Pediatrics</option>
-                                                                <option value="6">Pulmonology</option>
-                                                                <option value="7">Ophthalmology</option>
-                                                                <option value="8">Diagnostics</option>
-                                                                <option value="9">Others</option>
-                                                            </select>
 
-                                                    <select class="browser-default custom-select mb-3" style="font-size:18px;">
-                                                        <option value="default" selected disabled>Choose Doctor</option>
-                                                        <option value="1" >Dr Akinwole Micheal</option>
-                                                        <option value="2">Dr Olubanji Timothy</option>
-                                                        <option value="2">Dr Sola Ninolowo</option>
-                                                        <option value="2">Dr Hamzat Kareem</option>
-                                                        <option value="2">Dr Abigeal Titi</option>
-                                                        <option value="2">Dr Toyin Abraham</option>
-                                                    </select>
-                                                    <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Health Symptoms">
-                                                    <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Registration Number">
-                                                    <button class="btn btn-outline-black ">
-                                                    <span class="h5 font-weight-bold text-capitalize">Submit</span>
-                                                  </button>
-                                                </form>
-                                    </div>
-                            </div>
-                        </div>
                         <div class="tab-pane fade" id="pills-history" role="tabpanel" aria-labelledby="pills-history-tab">
                             <div>
                                     <div>
@@ -131,17 +126,17 @@
                                                     </thead>
                                                     <tbody>
 
-
-
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Headache </td>
-                                                        <td>Dr Shola Abigeal </td>
-                                                        <td>Dentistry</td>
-                                                        <td>27 Oct, 2019 </td>
-                                                        <td> </td>
-                                                     </tr>
-
+                                                    <% if (appoint.length) { %>
+                                                        <% for (let c = 0; c < appoint.length; c++) { %>
+                                                            <tr>
+                                                                <th scope="row"><%= c+1 %></th>
+                                                                <td ><%= appoint[c].health %></td>
+                                                                <td><%= appoint[c].doctor %> </td>
+                                                                <td><%= appoint[c].department %> </td>
+                                                                <td><%= appoint[c].createdDate %> </td>
+                                                            </tr>
+                                                        <% } %>
+                                                    <% } %>
 
                                                     </tbody>
                                                 </table>
@@ -193,57 +188,72 @@
 
                         <div class="tab-pane fade show active" id="pills-Profile" role="tabpanel" aria-labelledby="pills-Profile-tab">
                                 <div>
+                                        <div class="clearfix"></div>
+                                        <% if (messages.updateProfile) { %>
+                                            <div class="col-md-8 mx-auto">
+                                                <div class="alert alert-success alert-dismissable p-2 mt-2" id="notify">
+                                                    <h6 id="status" class="h5 text-center font-weight-bold"><%= messages.updateProfile %></h6>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                        <div class="clearfix"></div>
+
                                     <div>
                                         <h1 class="h3-responsive font-weight-bold ml-5 mb-4">Registration Profile</h1>
                                     </div>
+
                                         <div class="col-md-10">
-                                                <form class="text-center">
+                                                <form class="text-center" action="/dashboard" method="POST">
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                                <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Full Name">
+                                                                <input type="text" id="firstName" name="firstName" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.firstName %>" placeholder="First Name">
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="email" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Email">
+                                                                <input type="text" id="lastName" name="lastName" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.lastName %>"  placeholder="Last Name">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                                <input type="email" id="email" name="email" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.email %>"  placeholder="Email">
                                                         </div>
                                                          <div class="col-md-6">
-                                                                <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Phone Number">
+                                                                <input type="text" id="phone" name="phone" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.phone %>"  placeholder="Phone Number">
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Address">
+                                                                <input type="text" id="address" name="address" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.address %>"  placeholder="Address">
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Local Government">
+                                                                <input type="text" id="lg" name="lg" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.lg %>"  placeholder="Local Government">
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="City">
+                                                                <input type="text" id="town" name="town" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.town %>"  placeholder="City">
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Nationality">
+                                                                <input type="text" id="country" name="country" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.country %>"  placeholder="Nationality">
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Date of Birth">
+                                                                <input type="text" id="dob" name="dob" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.dob %>"  placeholder="Date of Birth">
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <select class="browser-default custom-select mb-3" style="font-size:18px;">
+                                                                <select class="browser-default custom-select mb-3" id="gender" name="gender" style="font-size:18px;">
                                                                         <option value="default" selected disabled>Choose Gender</option>
-                                                                        <option value="1" >Male</option>
-                                                                        <option value="2">Female</option>
+                                                                        <option value="Male" >Male</option>
+                                                                        <option value="Female">Female</option>
+                                                                        <option value="Others">Others</option>
                                                                     </select>
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Occupation">
+                                                                <input type="text" id="occupation" name="occupation" class="form-control mb-3 py-3"  style="font-size:18px;" value="<%= user.occupation %>" placeholder="Occupation">
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Blood Group">
+                                                                <input type="text" id="bloodGroup" name="bloodGroup" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.bloodGroup %>" placeholder="Blood Group">
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="text" id="" class="form-control mb-3 py-3" style="font-size:18px;" placeholder="Genotype">
+                                                                <input type="text" id="genotype" name="genotype" class="form-control mb-3 py-3" style="font-size:18px;" value="<%= user.genotype %>" placeholder="Genotype">
                                                         </div>
-                                                        <div class="col-md-6"><select class="browser-default custom-select mb-3" style="font-size:18px;">
+                                                        <div class="col-md-6"><select class="browser-default custom-select mb-3" id="marital" name="marital" style="font-size:18px;">
                                                                 <option value="default" selected disabled>Marital Status</option>
-                                                                <option value="1" >Single</option>
-                                                                <option value="2">Married</option>
-                                                                <option value="2">Divorce</option>
+                                                                <option value="Single" >Single</option>
+                                                                <option value="Married">Married</option>
+                                                                <option value="Divorce">Divorce</option>
                                                             </select>
                                                          </div>
                                                     </div>
@@ -265,7 +275,7 @@
         <div style="height:50px;"></div>
    </section>
 
-  <% include partial/footer %>
+  <% include ../partial/footer %>
 </body>
- <% include partial/scripts %>
+ <% include ../partial/scripts %>
 </html>
