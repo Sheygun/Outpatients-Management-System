@@ -26,9 +26,9 @@ require('./routes/auth')(passport);
 
 var app = express();
 
-const dbName = 'outpatient';
-const connectionString = 'mongodb://localhost:27017/' + dbName;
-// const connectionString = 'mongodb+srv://:@cluster0-z8hbj.mongodb.net/'+dbName;
+const dbName = 'samdos';
+// const connectionString = 'mongodb://localhost:27017/' + dbName;
+const connectionString = 'mongodb://lasu:lasudb1@ds123196.mlab.com:23196/'+dbName;
 
 mongoose.connect(connectionString, { useNewUrlParser: true,  useUnifiedTopology: true, useFindAndModify: false });
 
